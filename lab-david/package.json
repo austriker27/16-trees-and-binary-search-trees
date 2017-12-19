@@ -1,0 +1,19 @@
+{
+  "name": "lab-david",
+  "version": "1.0.0",
+  "description": "This is a binary tree data structure demonstration that uses a constructor to create new binary trees. The constructor includes three prototype methods that traverse the trees.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^4.13.1",
+    "jest": "^22.0.1"
+  }
+}
