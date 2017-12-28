@@ -47,6 +47,8 @@ class BinarySearchTree{
   }
 }
 
+// TODO : add remove function
+
 let bst = new BinarySearchTree(10);
 bst.insert(5);
 bst.insert(2);
