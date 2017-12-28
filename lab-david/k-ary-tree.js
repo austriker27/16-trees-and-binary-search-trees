@@ -66,6 +66,46 @@ KAryTree.prototype.find = function(value){
   return null;
 };
 
+KAryTree.prototype.createString = function(str = ''){
+  let queue = new Queue();
+  queue.enqueue(this);
+  let current = null;
+
+  
+  while(queue.getLength() > 0){
+    current = queue.dequeue();
+    if(str === ''){
+      str += JSON.stringifiy(current.value);
+    } else {
+      str += '/n' + JSON.stringify(current.value);
+    }
+    for (let child of current._children){
+      queue.enqueue(child);
+    }
+  } 
+  return str;
+};
+
+
+KAryTree.prototype.createArray = function(array = [] ){
+  let stack = new Stack();
+  stack.push(this);
+
+  let current = null;
+
+  
+  while(stack.getLength() > 0){
+    current = stack.pop();
+    array.push(current.value);
+    for(let child of current._children)
+      stack.push(child);
+  }
+  return array;
+};
+
+
+
+
 let one = new KAryTree(1);
 let two = new KAryTree(2);
 let three = new KAryTree(3);
@@ -87,3 +127,5 @@ three.appendChild(seven);
 six.appendChild(eight);
 
 one.breathFirstSearch();
+
+module.exports = KAryTree;
