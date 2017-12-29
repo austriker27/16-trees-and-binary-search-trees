@@ -29,22 +29,18 @@ const KAryTreeMaker = () => {
 // variables setup for what to expect
 
 const expectedTreeString = `1\n2\n3\n4\n5\n6\n7\n8`;
-const expectedTreeArray = [1,2,3,4,5,6,7,8];
+const expectedTreeArray = [1,4,3,7,6,8,5,2];
 
 
 describe('KAry Tree tests', () => {
   describe('find prototype testing', () => {
     test('This should return the found node', () => {
       let tree = KAryTreeMaker();
-      expect(tree.find(8)).toEqual(tree.children[1]._children[1]._children[0]);
-      console.log(tree.find(8));
-      expect(tree.find(7)).toEqual(tree.children[1]._children[1]);
-      console.log(tree.find(7));
-      expect(tree.find(1)).toEqual(tree.children[1]);
-      console.log(tree.find(1));
+      expect(tree.find(7)).toEqual({_children : [], value : 7});
+      expect(tree.find(8)).toEqual({_children : [], value : 8});
     });
 
-    test('this should return null if you search for a non-number', () => {
+    test('this should return a type error if you search for a non-number', () => {
       let tree = KAryTreeMaker();
       expect(tree.find('hi')).toBeNull();
     });
@@ -68,5 +64,4 @@ describe('KAry Tree tests', () => {
   });
 
 
-  });
 });

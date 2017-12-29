@@ -1,6 +1,6 @@
 # Code Fellows 401
-## 
-description
+## 16 : Trees & Binary Search Trees
+This repo has a binary search tree and KAry tree and several methods attached to each. 
 
 ## Motivation
 I was motivated by an extreme desire to learn web development which led me to enroll in this program which ultimately led me to this assignment. 

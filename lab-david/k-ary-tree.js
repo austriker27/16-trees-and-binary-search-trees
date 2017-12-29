@@ -22,7 +22,7 @@ KAryTree.prototype.breathFirstSearch = function(){
 
   let current = null;
 
-  while(queue.getLength() > 0){
+  while(queue.lengthGetter() > 0){
     current = queue.dequeue();
 
     console.log(`visiting ${current.value}`);
@@ -37,7 +37,7 @@ KAryTree.prototype.depthFirstSearch = function(){
   stack.push(this);
   let current = null;
 
-  while(stack.getLength() > 0){
+  while(stack.lengthGetter() > 0){
     current = stack.pop();
     console.log(`visiting ${current.value}`);
     for(let child of current._children)
@@ -47,13 +47,13 @@ KAryTree.prototype.depthFirstSearch = function(){
 
 KAryTree.prototype.find = function(value){
   if(typeof value !== 'number')
-    throw new TypeError('Value is not a number');
+    return null;
 
   let queue = new Queue();
   queue.enqueue(this);
   let current = null;
 
-  while(queue.getLength() > 0){
+  while(queue.lengthGetter() > 0){
     current = queue.dequeue();
     if(current.value === value){
       return current;
@@ -72,12 +72,12 @@ KAryTree.prototype.toString = function(str = ''){
   let current = null;
 
   
-  while(queue.getLength() > 0){
+  while(queue.lengthGetter() > 0){
     current = queue.dequeue();
     if(str === ''){
-      str += JSON.stringifiy(current.value);
+      str += JSON.stringify(current.value);
     } else {
-      str += '/n' + JSON.stringify(current.value);
+      str += '\n' + JSON.stringify(current.value);
     }
     for (let child of current._children){
       queue.enqueue(child);
@@ -94,7 +94,7 @@ KAryTree.prototype.toArray = function(array = [] ){
   let current = null;
 
   
-  while(stack.getLength() > 0){
+  while(stack.lengthGetter() > 0){
     current = stack.pop();
     array.push(current.value);
     for(let child of current._children)
