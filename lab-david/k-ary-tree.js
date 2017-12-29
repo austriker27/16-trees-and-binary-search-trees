@@ -66,7 +66,7 @@ KAryTree.prototype.find = function(value){
   return null;
 };
 
-KAryTree.prototype.createString = function(str = ''){
+KAryTree.prototype.toString = function(str = ''){
   let queue = new Queue();
   queue.enqueue(this);
   let current = null;
@@ -87,7 +87,7 @@ KAryTree.prototype.createString = function(str = ''){
 };
 
 
-KAryTree.prototype.createArray = function(array = [] ){
+KAryTree.prototype.toArray = function(array = [] ){
   let stack = new Stack();
   stack.push(this);
 
@@ -105,27 +105,6 @@ KAryTree.prototype.createArray = function(array = [] ){
 
 
 
-
-let one = new KAryTree(1);
-let two = new KAryTree(2);
-let three = new KAryTree(3);
-let four = new KAryTree(4);
-let five = new KAryTree(5);
-let six = new KAryTree(6);
-let seven = new KAryTree(7);
-let eight = new KAryTree(8);
-
-one.appendChild(two);
-one.appendChild(three);
-one.appendChild(four);
-
-
-three.appendChild(five);
-three.appendChild(six);
-three.appendChild(seven);
-
-six.appendChild(eight);
-
-one.breathFirstSearch();
+// one.breathFirstSearch();
 
 module.exports = KAryTree;
