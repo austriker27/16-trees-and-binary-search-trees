@@ -16,7 +16,14 @@ Javascript
 - jest
 
 ## Features
-
+- KAary Tree is a constructor with the following prototype methods:
+  - Find : iterates over all child nodes using a breath first traversal and return the first node that has the value
+  - toString : iterates over all child nodes using a breath first traversal and concatenates their values by newlines into a string
+  - toArray : which takes an array and pushes all the tree's elements into it.
+- Binary Search Tree
+  - Insert : inserts a value into the BST
+  - Find : finds a value in the BST
+  - Remove **(not completed)** : removes a value from the BST
 
 
 ## Installation / How to use
@@ -25,6 +32,10 @@ Javascript
 - run `npm test` to run tests
 
 ## Tests
+- KAry Tree Tests:
+  - Tests find Prototype method
+  - Tests create String prototype method
+  - Tests create Array prototype method
 
 ## Contribute
 If anyone wants to help, feel free to open a pull request and send it over. PRs will be answered in the order they are received. 
